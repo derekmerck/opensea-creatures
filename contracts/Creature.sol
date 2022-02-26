@@ -10,14 +10,14 @@ import "./ERC721Tradable.sol";
  */
 contract Creature is ERC721Tradable {
     constructor(address _proxyRegistryAddress)
-        ERC721Tradable("Creature", "OSC", _proxyRegistryAddress)
+        ERC721Tradable("CryptoFaie", "FAIE", _proxyRegistryAddress)
     {}
 
     function baseTokenURI() override public pure returns (string memory) {
-        return "https://creatures-api.opensea.io/api/creature/";
+        return "https://faie.afreet.city/api/1.0/meta/beta/";
     }
 
     function contractURI() public pure returns (string memory) {
-        return "https://creatures-api.opensea.io/contract/opensea-creatures";
+        return "https://faie.afreet.city/api/1.0/contract/beta";
     }
 }

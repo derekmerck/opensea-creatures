@@ -3,6 +3,7 @@ const HDWalletProvider = require("truffle-hdwallet-provider");
 const MNEMONIC = process.env.MNEMONIC;
 const NODE_API_KEY = process.env.INFURA_KEY || process.env.ALCHEMY_KEY;
 const isInfura = !!process.env.INFURA_KEY;
+const ETHSCAN_API = process.env.ETHSCAN_API;
 
 const needsNodeAPI =
   process.env.npm_config_argv &&
@@ -42,8 +43,9 @@ module.exports = {
       provider: function () {
         return new HDWalletProvider(MNEMONIC, mainnetNodeUrl);
       },
-      gas: 5000000,
-      gasPrice: 5000000000,
+      gas: 2500000,
+      gasPrice: 18000000000,  // 18 gwei
+      // gasPrice: 5000000000,
     },
   },
   mocha: {
@@ -68,6 +70,6 @@ module.exports = {
     'truffle-plugin-verify'
   ],
   api_keys: {
-    etherscan: 'ETHERSCAN_API_KEY_FOR_VERIFICATION'
+    etherscan: ETHSCAN_API
   }
 };

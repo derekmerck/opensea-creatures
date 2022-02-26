@@ -32,7 +32,7 @@ module.exports = async (deployer, network, addresses) => {
   }
 
   if (DEPLOY_CREATURES) {
-    await deployer.deploy(Creature, proxyRegistryAddress, {gas: 5000000});
+    await deployer.deploy(Creature, proxyRegistryAddress, {gas: 2500000, gasPrice: 15000000000});
   }
 
   if (DEPLOY_CREATURES_SALE) {
